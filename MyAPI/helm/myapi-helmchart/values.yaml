@@ -1,0 +1,15 @@
+deployment:
+  replicas: 1
+  image:
+    repository: myapi
+    pullPolicy: Never
+    tag: latest
+  ports:
+    containerPort: 443
+
+service:
+  type: LoadBalancer
+  ports:
+    port: 443
+    targetPort: 443
+    nodePort: 30000
