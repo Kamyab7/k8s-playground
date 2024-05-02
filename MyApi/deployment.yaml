@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: weatherapi-deployment
+  name: myapi-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: weatherapi
+      app: myapi
   template:
     metadata:
       labels:
-        app: weatherapi
+        app: myapi
     spec:
       containers:
-      - name: weatherapi-container
+      - name: myapi-container
         image: myapi
         magePullPolicy: IfNotPresent  # or Always
         ports:
-        - containerPort: 80
+        - containerPort: 443

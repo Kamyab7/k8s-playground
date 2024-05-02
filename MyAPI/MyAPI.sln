@@ -3,13 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApi", "MyApi\MyApi.csproj", "{05DA9872-1119-4D7B-92CF-869427BBA1F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApi", "MyApi\MyApi.csproj", "{05DA9872-1119-4D7B-92CF-869427BBA1F1}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1447FA45-2DF1-44E8-A6BD-F623EED1A191}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deployment", "deployment", "{CF143D05-C2EF-43B0-B722-9C90D705AE59}"
 	ProjectSection(SolutionItems) = preProject
 		deployment.yaml = deployment.yaml
+		service.yaml = service.yaml
 	EndProjectSection
 EndProject
 Global
