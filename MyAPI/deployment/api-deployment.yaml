@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapi-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapi
+  template:
+    metadata:
+      labels:
+        app: myapi
+    spec:
+      containers:
+      - name: myapi-container
+        image: myapi
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 443
+        env:
+        - name: MSSQL_SERVER
+          value: "mssql-service"  # This should match the name of your SQL Server service
+        - name: MSSQL_USER
+          value: "sa"  # Update with your SQL Server username
+        - name: MSSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mssql-secret
+              key: SA_PASSWORD  # Reference the secret created for SA_PASSWORD
+        - name: MSSQL_DATABASE
+          value: "RayankarDb"  # Replace with your SQL Server database name
